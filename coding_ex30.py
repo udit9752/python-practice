@@ -20,3 +20,4 @@ add_cheese = input("Do you want t add extra cheese? (Y/N):")
 if add_cheese == "Y" or add_cheese == "y":
     bill += 50
     print(f"Your total bill is {bill} rupees.")
+    print("success fully ")
