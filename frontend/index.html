@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Optimizer - AI-Powered ATS Optimization</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-file-alt"></i>
+                    <h1>Resume Optimizer</h1>
+                </div>
+                <div class="header-subtitle">
+                    AI-Powered ATS-Friendly Resume Optimization
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Status Banner -->
+            <div id="statusBanner" class="status-banner" style="display: none;">
+                <div class="status-content">
+                    <i class="fas fa-info-circle"></i>
+                    <span id="statusMessage"></span>
+                </div>
+                <button id="closeStatus" class="status-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-upload"></i> Upload Your Resume</h2>
+                    <p>Upload your resume in PDF, DOCX, or TXT format (max 10MB)</p>
+                </div>
+
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>Drag & drop your resume here</h3>
+                        <p>or <button type="button" class="browse-btn" id="browseBtn">browse files</button></p>
+                        <input type="file" id="fileInput" accept=".pdf,.docx,.txt" style="display: none;">
+                        <div class="supported-formats">
+                            <small>Supported formats: PDF, DOCX, TXT</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="fileInfo" class="file-info" style="display: none;">
+                    <div class="file-details">
+                        <i class="fas fa-file"></i>
+                        <div class="file-meta">
+                            <div class="file-name" id="fileName"></div>
+                            <div class="file-size" id="fileSize"></div>
+                        </div>
+                        <button type="button" class="remove-file" id="removeFile">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Job Description Section -->
+            <section class="job-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-briefcase"></i> Job Description</h2>
+                    <p>Paste the job description you want to optimize your resume for</p>
+                </div>
+
+                <div class="job-input-container">
+                    <textarea 
+                        id="jobDescription" 
+                        placeholder="Paste the complete job description here. Include requirements, responsibilities, and any specific skills or qualifications mentioned..."
+                        rows="8"
+                    ></textarea>
+                    <div class="char-counter">
+                        <span id="charCount">0</span> characters
+                    </div>
+                </div>
+            </section>
+
+            <!-- Options Section -->
+            <section class="options-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-cog"></i> Optimization Options</h2>
+                </div>
+
+                <div class="options-grid">
+                    <label class="option-card">
+                        <input type="checkbox" id="includeAnalysis" checked>
+                        <div class="option-content">
+                            <div class="option-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="option-text">
+                                <h3>Include Analysis</h3>
+                                <p>Get detailed analysis of resume-job fit and recommendations</p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <div class="option-card info-card">
+                        <div class="option-content">
+                            <div class="option-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="option-text">
+                                <h3>AI-Powered</h3>
+                                <p>Uses Google Gemini AI for intelligent optimization</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="option-card info-card">
+                        <div class="option-content">
+                            <div class="option-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="option-text">
+                                <h3>ATS-Friendly</h3>
+                                <p>Optimized for Applicant Tracking Systems</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Action Section -->
+            <section class="action-section">
+                <button type="button" id="optimizeBtn" class="optimize-btn" disabled>
+                    <i class="fas fa-magic"></i>
+                    <span>Optimize Resume</span>
+                </button>
+
+                <button type="button" id="analyzeBtn" class="analyze-btn" disabled>
+                    <i class="fas fa-search"></i>
+                    <span>Analyze Only</span>
+                </button>
+            </section>
+
+            <!-- Loading Section -->
+            <section id="loadingSection" class="loading-section" style="display: none;">
+                <div class="loading-content">
+                    <div class="loading-spinner"></div>
+                    <h3 id="loadingTitle">Processing Your Resume</h3>
+                    <p id="loadingMessage">This may take a few moments...</p>
+                    <div class="loading-steps">
+                        <div class="step" id="step1">
+                            <i class="fas fa-file-upload"></i>
+                            <span>Parsing resume</span>
+                        </div>
+                        <div class="step" id="step2">
+                            <i class="fas fa-brain"></i>
+                            <span>AI analysis</span>
+                        </div>
+                        <div class="step" id="step3">
+                            <i class="fas fa-magic"></i>
+                            <span>Optimizing content</span>
+                        </div>
+                        <div class="step" id="step4">
+                            <i class="fas fa-check"></i>
+                            <span>Finalizing</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="resultsSection" class="results-section" style="display: none;">
+                <div class="section-header">
+                    <h2><i class="fas fa-star"></i> Optimization Results</h2>
+                </div>
+
+                <!-- Analysis Results -->
+                <div id="analysisResults" class="results-card" style="display: none;">
+                    <div class="card-header">
+                        <h3><i class="fas fa-chart-line"></i> Resume Analysis</h3>
+                        <button type="button" class="toggle-btn" id="toggleAnalysis">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="card-content" id="analysisContent">
+                        <!-- Analysis content will be inserted here -->
+                    </div>
+                </div>
+
+                <!-- Optimized Resume -->
+                <div id="optimizedResults" class="results-card" style="display: none;">
+                    <div class="card-header">
+                        <h3><i class="fas fa-file-alt"></i> Optimized Resume</h3>
+                        <div class="card-actions">
+                            <button type="button" class="action-btn" id="copyBtn">
+                                <i class="fas fa-copy"></i> Copy
+                            </button>
+                            <button type="button" class="action-btn" id="downloadBtn">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="resume-preview" id="resumePreview">
+                            <!-- Optimized resume content will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Processing Info -->
+                <div id="processingInfo" class="info-card">
+                    <h4><i class="fas fa-info-circle"></i> Processing Summary</h4>
+                    <ul id="processingSteps">
+                        <!-- Processing steps will be inserted here -->
+                    </ul>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="results-actions">
+                    <button type="button" id="newOptimization" class="secondary-btn">
+                        <i class="fas fa-plus"></i>
+                        Optimize Another Resume
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2024 Resume Optimizer. Powered by AI technology.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#" onclick="showAbout()">About</a>
+                    <a href="#" onclick="showPrivacy()">Privacy</a>
+                    <a href="#" onclick="showHelp()">Help</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle"></h3>
+                <button type="button" class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Modal content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
