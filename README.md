@@ -47,6 +47,14 @@ curl -X POST "http://localhost:8000/optimize" \
   -o optimized_resume.docx
 ```
 
+## Optional Web UI
+
+This project includes a minimal static UI served by FastAPI.
+
+- Open in browser: `http://localhost:8000/`
+- Upload resume (PDF/DOCX/TXT), paste the JD, choose output format, and submit.
+- For `Text` output, results render inline; for `DOCX`, a file download starts.
+
 ## Notes
 - Supported file types: PDF, DOCX, TXT.
 - The service avoids fabricating content; it restructures, prioritizes, and highlights relevant experience and skills to match the JD.

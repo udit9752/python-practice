@@ -4,7 +4,9 @@ import traceback
 from typing import Optional
 
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
-from fastapi.responses import JSONResponse, StreamingResponse
+from fastapi.responses import JSONResponse, StreamingResponse, FileResponse
+from fastapi.staticfiles import StaticFiles
+from pathlib import Path
 
 from app.services.parsers import parse_resume, UnsupportedFileTypeError
 from app.services.gemini_service import GeminiClient
@@ -13,6 +15,13 @@ from app.utils.docx_export import render_text_to_docx
 MAX_FILE_SIZE_BYTES = 10 * 1024 * 1024  # 10MB
 
 app = FastAPI(title="Resume Optimizer Backend", version="0.1.0")
+
+BASE_DIR = Path(__file__).resolve().parent
+STATIC_DIR = BASE_DIR / "static"
+
+# Mount static assets (JS/CSS) and serve index at root
+if STATIC_DIR.exists():
+	app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
 
 gemini_client: Optional[GeminiClient] = None
 
@@ -78,3 +87,12 @@ async def optimize_resume_endpoint(
 @app.get("/health")
 async def health() -> dict:
 	return {"status": "ok"}
+
+
+@app.get("/")
+async def root_index() -> FileResponse:
+	index_path = STATIC_DIR / "index.html"
+	if not index_path.exists():
+		# Provide a small fallback message if UI not built
+		raise HTTPException(status_code=404, detail="UI not available. Build 'app/static/index.html'.")
+	return FileResponse(str(index_path), media_type="text/html")

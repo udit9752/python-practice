@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Resume Optimizer</title>
+	<link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+	<div class="container">
+		<h1>Resume Optimizer</h1>
+		<form id="optForm">
+			<div class="field">
+				<label for="file">Resume (PDF/DOCX/TXT)</label>
+				<input type="file" id="file" name="file" accept=".pdf,.docx,.txt" required />
+			</div>
+			<div class="field">
+				<label for="jd">Job Description</label>
+				<textarea id="jd" name="job_description" rows="10" placeholder="Paste job description..." required></textarea>
+			</div>
+			<div class="row">
+				<div class="field">
+					<label for="format">Output Format</label>
+					<select id="format" name="output_format">
+						<option value="text" selected>Text (inline)</option>
+						<option value="docx">DOCX (download)</option>
+					</select>
+				</div>
+				<div class="spacer"></div>
+				<button id="submitBtn" type="submit">Optimize</button>
+			</div>
+		</form>
+		<div id="status" class="status" hidden></div>
+		<pre id="result" class="result" hidden></pre>
+	</div>
+	<script src="/static/main.js"></script>
+</body>
+</html>
