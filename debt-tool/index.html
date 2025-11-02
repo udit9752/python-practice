@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free debt analysis tool to help you escape debt traps and create a personalized repayment roadmap">
+    <title>Debt Freedom Analyzer - Escape the Debt Trap</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="logo.png" alt="Debt Freedom Analyzer Logo" class="brand-logo">
+                    <div class="brand-text">
+                        <h1 class="brand-title">Debt Freedom Analyzer</h1>
+                        <p class="brand-tagline">Your Path to Financial Freedom</p>
+                    </div>
+                </div>
+                <nav class="main-nav">
+                    <a href="#how-it-works" class="nav-link">How It Works</a>
+                    <a href="#calculator" class="nav-link">Calculator</a>
+                    <a href="#resources" class="nav-link">Resources</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2 class="hero-title">Break Free from the <span class="highlight">Debt Trap</span></h2>
+                    <p class="hero-subtitle">Get a personalized debt repayment roadmap in minutes. Analyze your debts, discover where you're losing money, and get a proven strategy to become debt-free.</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <i class="fas fa-users"></i>
+                            <div class="stat-content">
+                                <strong>10,000+</strong>
+                                <span>Users Helped</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-chart-line"></i>
+                            <div class="stat-content">
+                                <strong>$50M+</strong>
+                                <span>Debt Analyzed</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-star"></i>
+                            <div class="stat-content">
+                                <strong>100% Free</strong>
+                                <span>Always</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="#calculator" class="btn btn-primary btn-lg">
+                            <i class="fas fa-calculator"></i>
+                            Start Your Free Analysis
+                        </a>
+                        <a href="#how-it-works" class="btn btn-secondary btn-lg">
+                            <i class="fas fa-play-circle"></i>
+                            See How It Works
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-card">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3>Comprehensive Analysis</h3>
+                        <p>Understand your complete debt situation</p>
+                    </div>
+                    <div class="hero-card">
+                        <div class="card-icon">
+                            <i class="fas fa-road"></i>
+                        </div>
+                        <h3>Personalized Roadmap</h3>
+                        <p>Custom repayment strategy for your situation</p>
+                    </div>
+                    <div class="hero-card">
+                        <div class="card-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Proven Methods</h3>
+                        <p>Avalanche, Snowball, and Hybrid strategies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Three simple steps to your debt-free journey</p>
+            </div>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-list-alt"></i>
+                    </div>
+                    <h3 class="step-title">Enter Your Debts</h3>
+                    <p class="step-description">Add all your debts - credit cards, loans, medical bills. Include the balance, interest rate, and minimum payment for each.</p>
+                </div>
+                <div class="step-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3 class="step-title">Get Your Analysis</h3>
+                    <p class="step-description">Our tool analyzes your debt situation, identifies problems, and calculates your optimal repayment strategy.</p>
+                </div>
+                <div class="step-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3 class="step-title">Follow Your Roadmap</h3>
+                    <p class="step-description">Get a detailed action plan with specific steps, milestones, and timeline to become completely debt-free.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="calculator-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Debt Freedom Calculator</h2>
+                <p class="section-subtitle">Enter your debts below to get started</p>
+            </div>
+
+            <!-- Debt Input Form -->
+            <div class="calculator-container">
+                <!-- Monthly Budget Input -->
+                <div class="budget-input-section card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-wallet"></i> Monthly Budget</h3>
+                        <p>How much can you pay toward debts each month?</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <span class="input-prefix">$</span>
+                            <input type="number" id="monthlyBudget" class="form-input" placeholder="1000" min="0" step="10">
+                            <span class="input-hint">Total amount available for all debt payments</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Debts Section -->
+                <div class="debts-section card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-credit-card"></i> Your Debts</h3>
+                        <p>Add each of your debts below</p>
+                    </div>
+                    <div class="card-body">
+                        <div id="debtsContainer">
+                            <!-- Debt items will be added here dynamically -->
+                        </div>
+                        <button type="button" class="btn btn-secondary" id="addDebtBtn">
+                            <i class="fas fa-plus"></i> Add Another Debt
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button type="button" class="btn btn-primary btn-lg" id="analyzeBtn">
+                        <i class="fas fa-chart-bar"></i>
+                        Analyze My Debts
+                    </button>
+                    <button type="button" class="btn btn-outline btn-lg" id="resetBtn">
+                        <i class="fas fa-redo"></i>
+                        Reset
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div id="loadingState" class="loading-state" style="display: none;">
+                <div class="spinner"></div>
+                <p>Analyzing your debts...</p>
+            </div>
+
+            <!-- Results Section -->
+            <div id="resultsSection" class="results-section" style="display: none;">
+                <!-- Analysis Overview -->
+                <div class="results-overview card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-clipboard-check"></i> Debt Analysis Overview</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="analysis-grid">
+                            <div class="analysis-item">
+                                <div class="analysis-label">Total Debt</div>
+                                <div class="analysis-value" id="totalDebt">$0</div>
+                            </div>
+                            <div class="analysis-item">
+                                <div class="analysis-label">Number of Debts</div>
+                                <div class="analysis-value" id="debtCount">0</div>
+                            </div>
+                            <div class="analysis-item">
+                                <div class="analysis-label">Avg. Interest Rate</div>
+                                <div class="analysis-value" id="avgRate">0%</div>
+                            </div>
+                            <div class="analysis-item">
+                                <div class="analysis-label">Yearly Interest Cost</div>
+                                <div class="analysis-value danger" id="yearlyInterest">$0</div>
+                            </div>
+                            <div class="analysis-item">
+                                <div class="analysis-label">Budget Utilization</div>
+                                <div class="analysis-value" id="budgetUtil">0%</div>
+                            </div>
+                            <div class="analysis-item severity-badge">
+                                <div class="analysis-label">Debt Severity</div>
+                                <div class="analysis-value" id="severity">-</div>
+                            </div>
+                        </div>
+                        <div class="severity-message" id="severityMessage"></div>
+                    </div>
+                </div>
+
+                <!-- Problems Identified -->
+                <div class="problems-section card" id="problemsCard" style="display: none;">
+                    <div class="card-header">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Problems Identified</h3>
+                        <p>Areas where you're losing money or at risk</p>
+                    </div>
+                    <div class="card-body">
+                        <div id="problemsList"></div>
+                    </div>
+                </div>
+
+                <!-- Repayment Strategies Comparison -->
+                <div class="strategies-section card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-strategy"></i> Repayment Strategy Comparison</h3>
+                        <p>Compare three proven debt payoff methods</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="strategies-grid">
+                            <!-- Avalanche Strategy -->
+                            <div class="strategy-card" data-strategy="avalanche">
+                                <div class="strategy-header">
+                                    <div class="strategy-icon">
+                                        <i class="fas fa-mountain"></i>
+                                    </div>
+                                    <h4>Avalanche Method</h4>
+                                    <p class="strategy-subtitle">Highest Interest First</p>
+                                </div>
+                                <div class="strategy-body">
+                                    <div class="strategy-stat">
+                                        <span class="stat-label">Time to Debt-Free:</span>
+                                        <span class="stat-value" id="avalanche-time">-</span>
+                                    </div>
+                                    <div class="strategy-stat">
+                                        <span class="stat-label">Total Interest Paid:</span>
+                                        <span class="stat-value" id="avalanche-interest">-</span>
+                                    </div>
+                                    <div class="strategy-stat">
+                                        <span class="stat-label">Total Amount Paid:</span>
+                                        <span class="stat-value" id="avalanche-total">-</span>
+                                    </div>
+                                    <div class="strategy-description">
+                                        <i class="fas fa-info-circle"></i>
+                                        <span>Saves the most money by paying off highest interest debts first</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Snowball Strategy -->
+                            <div class="strategy-card" data-strategy="snowball">
+                                <div class="strategy-header">
+                                    <div class="strategy-icon">
+                                        <i class="fas fa-snowflake"></i>
+                                    </div>
+                                    <h4>Snowball Method</h4>
+                                    <p class="strategy-subtitle">Smallest Balance First</p>
+                                </div>
+                                <div class="strategy-body">
+                                    <div class="strategy-stat">
+                                        <span class="stat-label">Time to Debt-Free:</span>
+                                        <span class="stat-value" id="snowball-time">-</span>
+                                    </div>
+                                    <div class="strategy-stat">
+                                        <span class="stat-label">Total Interest Paid:</span>
+                                        <span class="stat-value" id="snowball-interest">-</span>
+                                    </div>
+                                    <div class="strategy-stat">
+                                        <span class="stat-label">Total Amount Paid:</span>
+                                        <span class="stat-value" id="snowball-total">-</span>
+                                    </div>
+                                    <div class="strategy-description">
+                                        <i class="fas fa-info-circle"></i>
+                                        <span>Builds motivation with quick wins by eliminating small debts first</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Hybrid Strategy -->
+                            <div class="strategy-card recommended" data-strategy="hybrid">
+                                <div class="recommended-badge">
+                                    <i class="fas fa-star"></i> Recommended
+                                </div>
+                                <div class="strategy-header">
+                                    <div class="strategy-icon">
+                                        <i class="fas fa-balance-scale"></i>
+                                    </div>
+                                    <h4>Hybrid Method</h4>
+                                    <p class="strategy-subtitle">Best of Both Worlds</p>
+                                </div>
+                                <div class="strategy-body">
+                                    <div class="strategy-stat">
+                                        <span class="stat-label">Time to Debt-Free:</span>
+                                        <span class="stat-value" id="hybrid-time">-</span>
+                                    </div>
+                                    <div class="strategy-stat">
+                                        <span class="stat-label">Total Interest Paid:</span>
+                                        <span class="stat-value" id="hybrid-interest">-</span>
+                                    </div>
+                                    <div class="strategy-stat">
+                                        <span class="stat-label">Total Amount Paid:</span>
+                                        <span class="stat-value" id="hybrid-total">-</span>
+                                    </div>
+                                    <div class="strategy-description">
+                                        <i class="fas fa-info-circle"></i>
+                                        <span>Balances savings and motivation with smart prioritization</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comparison-summary">
+                            <h4><i class="fas fa-chart-line"></i> Strategy Comparison</h4>
+                            <p id="comparisonText"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommended Strategy Details -->
+                <div class="recommended-strategy-section card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-star"></i> Your Recommended Strategy</h3>
+                        <p id="recommendedMethodName">Hybrid Method</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="recommendation-reason" id="recommendationReason"></div>
+                        
+                        <div class="payoff-timeline">
+                            <h4><i class="fas fa-calendar-check"></i> Payoff Timeline</h4>
+                            <div id="timelineContainer"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Plan -->
+                <div class="action-plan-section card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-tasks"></i> Your Action Plan</h3>
+                        <p>Follow these steps to become debt-free</p>
+                    </div>
+                    <div class="card-body">
+                        <div id="actionStepsContainer"></div>
+                    </div>
+                </div>
+
+                <!-- Milestones -->
+                <div class="milestones-section card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-flag-checkered"></i> Milestones to Celebrate</h3>
+                        <p>Mark these victories on your journey!</p>
+                    </div>
+                    <div class="card-body">
+                        <div id="milestonesContainer"></div>
+                    </div>
+                </div>
+
+                <!-- Tips Section -->
+                <div class="tips-section card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-lightbulb"></i> Tips for Success</h3>
+                    </div>
+                    <div class="card-body">
+                        <div id="tipsContainer"></div>
+                    </div>
+                </div>
+
+                <!-- Print/Save Options -->
+                <div class="action-buttons">
+                    <button type="button" class="btn btn-primary" id="printPlanBtn">
+                        <i class="fas fa-print"></i>
+                        Print Roadmap
+                    </button>
+                    <button type="button" class="btn btn-secondary" id="downloadPlanBtn">
+                        <i class="fas fa-download"></i>
+                        Download PDF
+                    </button>
+                    <button type="button" class="btn btn-outline" id="newAnalysisBtn">
+                        <i class="fas fa-redo"></i>
+                        New Analysis
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="resources-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Helpful Resources</h2>
+                <p class="section-subtitle">Tools and information to support your debt-free journey</p>
+            </div>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Debt Management Guide</h3>
+                    <p>Learn proven strategies for managing and eliminating debt effectively</p>
+                    <a href="#" class="resource-link">Read Guide <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Budget Template</h3>
+                    <p>Download our free budget template to track your expenses and income</p>
+                    <a href="#" class="resource-link">Download <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Support Community</h3>
+                    <p>Join others on their debt-free journey for support and motivation</p>
+                    <a href="#" class="resource-link">Join Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Video Tutorials</h3>
+                    <p>Watch step-by-step videos on debt management and financial planning</p>
+                    <a href="#" class="resource-link">Watch Videos <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="logo.png" alt="Logo" class="footer-logo">
+                    <p class="footer-text">Helping people break free from debt traps and achieve financial freedom.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#calculator">Calculator</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> support@debtfreedom.com</li>
+                        <li><i class="fas fa-phone"></i> 1-800-DEBT-FREE</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Debt Freedom Analyzer. All rights reserved. | <em>This tool provides educational information only and should not be considered financial advice. Consult with a financial professional for personalized guidance.</em></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
